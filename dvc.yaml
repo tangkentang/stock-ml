@@ -1,0 +1,16 @@
+# dvc.yaml
+stages:
+  # Tahap pertama: Mengambil data
+  get_data:
+    cmd: python src/get_data.py # Perintah yang akan dijalankan
+    deps:
+      - src/get_data.py         # Dependensi: skrip itu sendiri
+    outs:
+      - data/raw                # Output: folder data yang dilacak DVC
+
+  # Tahap kedua: Melatih model
+  train_model:
+    cmd: python src/train_model.py # Perintah yang akan dijalankan
+    deps:
+      - src/train_model.py      # Dependensi: skrip train
+      - data/raw                # Dependensi: data dari tahap sebelumnya
