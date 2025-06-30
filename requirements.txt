@@ -1,0 +1,7 @@
+yfinance
+mlflow
+dvc[all]
+fastapi
+uvicorn
+joblib
+pytest
