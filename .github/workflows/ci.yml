@@ -23,7 +23,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt || true
-        pip install dvc[all] fastapi uvicorn joblib yfinance
+        pip install dvc[all] fastapi uvicorn joblib yfinance mlflow
 
     - name: DVC Pull Data (if needed)
       run: |
