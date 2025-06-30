@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import numpy as np
 import joblib
+import os
 
 # ---- Kode Modifikasi ----
 # Membaca data dari file yang dihasilkan oleh tahap get_data
@@ -56,7 +57,9 @@ print(f"Akurasi model di data test: {accuracy:.4f}")
 #     mlflow.sklearn.log_model(model, "model")
 #     mlflow.log_metric("accuracy", accuracy)
 #     print(f"MLflow run_id: {run.info.run_id}")
-import joblib
+
+# Pastikan direktori model_local ada
+os.makedirs("model_local", exist_ok=True)
 joblib.dump(model, "model_local/random_forest_model.pkl")
 print("Model saved to model_local/random_forest_model.pkl")
 
