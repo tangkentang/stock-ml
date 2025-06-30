@@ -23,7 +23,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt || true
-        pip install dvc[all] fastapi uvicorn joblib
+        pip install dvc[all] fastapi uvicorn joblib yfinance
 
     - name: DVC Pull Data (if needed)
       run: |
@@ -36,9 +36,3 @@ jobs:
     - name: Run tests
       run: |
         pytest || echo "No tests found"
-
-        - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt || true
-        pip install dvc[all] fastapi uvicorn joblib yfinance
