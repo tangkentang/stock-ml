@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/0/20b188aa5daf4050b221deeb28d38206/artifacts
+end_time: 1750902790570
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 20b188aa5daf4050b221deeb28d38206
+run_name: respected-pig-841
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750902789011
+status: 4
+tags: []
+user_id: hernandoatha

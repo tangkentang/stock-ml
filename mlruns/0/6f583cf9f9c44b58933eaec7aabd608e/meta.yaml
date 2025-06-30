@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/0/6f583cf9f9c44b58933eaec7aabd608e/artifacts
+end_time: 1750902548312
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6f583cf9f9c44b58933eaec7aabd608e
+run_name: crawling-ox-140
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750902546266
+status: 4
+tags: []
+user_id: hernandoatha

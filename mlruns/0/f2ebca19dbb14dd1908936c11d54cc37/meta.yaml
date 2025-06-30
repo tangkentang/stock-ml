@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/0/f2ebca19dbb14dd1908936c11d54cc37/artifacts
+end_time: 1750902660179
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f2ebca19dbb14dd1908936c11d54cc37
+run_name: vaunted-tern-235
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750902658605
+status: 4
+tags: []
+user_id: hernandoatha
