@@ -1,8 +1,8 @@
 # Di dalam src/train_model.py
 
 import pandas as pd
-import mlflow
-import mlflow.sklearn
+#import mlflow
+#import mlflow.sklearn
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
@@ -52,12 +52,11 @@ accuracy = accuracy_score(y_test, predictions)
 print(f"Akurasi model di data test: {accuracy:.4f}")
 
 # Logging ke MLflow (opsional, jika sudah setup)
-with mlflow.start_run() as run:
-    mlflow.sklearn.log_model(model, "model")
-    mlflow.log_metric("accuracy", accuracy)
-    print(f"MLflow run_id: {run.info.run_id}")
-
-# Simpan model ke file lokal setelah training
+# with mlflow.start_run() as run:
+#     mlflow.sklearn.log_model(model, "model")
+#     mlflow.log_metric("accuracy", accuracy)
+#     print(f"MLflow run_id: {run.info.run_id}")
+import joblib
 joblib.dump(model, "model_local/random_forest_model.pkl")
 print("Model saved to model_local/random_forest_model.pkl")
 
