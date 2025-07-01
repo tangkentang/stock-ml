@@ -35,3 +35,7 @@ async def predict(features: StockFeatures):
     result = "Naik" if prediction[0] == 1 else "Turun"
 
     return {"prediction": result}
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello, World!"}
