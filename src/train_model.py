@@ -50,7 +50,7 @@ model.fit(X_train, y_train)
 # Predict & evaluate
 predictions = model.predict(X_test)
 accuracy = accuracy_score(y_test, predictions)
-print(f"Akurasi model di data test: {accuracy:.4f}")
+print("Akurasi model di data test:", accuracy)
 
 # Logging ke MLflow (opsional, jika sudah setup)
 # with mlflow.start_run() as run:
