@@ -34,6 +34,9 @@ data = data.dropna()
 data['Target'] = (data['Close'].shift(-1) > data['Close']).astype(int)
 data = data.dropna()
 
+print("Distribusi label Target:")
+print(data['Target'].value_counts())
+
 # Split data (time series)
 split_index = int(len(data) * 0.8)
 train = data.iloc[:split_index]
@@ -49,8 +52,16 @@ model.fit(X_train, y_train)
 
 # Predict & evaluate
 predictions = model.predict(X_test)
+train_predictions = model.predict(X_train)
 accuracy = accuracy_score(y_test, predictions)
-print("Akurasi model di data test:", accuracy)
+train_accuracy = accuracy_score(y_train, train_predictions)
+print(f"Akurasi model di data training: {train_accuracy:.4f}")
+print(f"Akurasi model di data test: {accuracy:.4f}")
+
+print("Contoh prediksi di data test:")
+print(predictions[:10])
+print("Label sebenarnya:")
+print(y_test.values[:10])
 
 # Logging ke MLflow (opsional, jika sudah setup)
 # with mlflow.start_run() as run:
