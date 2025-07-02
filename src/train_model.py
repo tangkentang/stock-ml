@@ -37,10 +37,17 @@ data = data.dropna()
 print("Distribusi label Target:")
 print(data['Target'].value_counts())
 
-# Split data (time series)
-split_index = int(len(data) * 0.8)
-train = data.iloc[:split_index]
-test = data.iloc[split_index:]
+# Balancing data (undersampling)
+min_count = data['Target'].value_counts().min()
+df_up = data[data['Target'] == 1].sample(min_count, random_state=42, replace=True)
+df_down = data[data['Target'] == 0].sample(min_count, random_state=42)
+data_balanced = pd.concat([df_up, df_down])
+data_balanced = data_balanced.sample(frac=1, random_state=42)  # shuffle
+
+# Split data (time series, balanced)
+split_index = int(len(data_balanced) * 0.8)
+train = data_balanced.iloc[:split_index]
+test = data_balanced.iloc[split_index:]
 
 features = ['SMA_5', 'Price_Change', 'Volume']
 X_train, y_train = train[features], train['Target']
