@@ -27,7 +27,10 @@ data = data.set_index('Date')
 
 # Feature Engineering
 data['SMA_5'] = data['Close'].rolling(window=5).mean()
+data['SMA_10'] = data['Close'].rolling(window=10).mean()
 data['Price_Change'] = data['Close'].diff()
+data['High_Low'] = data['High'] - data['Low']
+data['Open_Close'] = data['Open'] - data['Close']
 data = data.dropna()
 
 # Buat Target Variable
@@ -49,7 +52,7 @@ split_index = int(len(data_balanced) * 0.8)
 train = data_balanced.iloc[:split_index]
 test = data_balanced.iloc[split_index:]
 
-features = ['SMA_5', 'Price_Change', 'Volume']
+features = ['SMA_5', 'SMA_10', 'Price_Change', 'High_Low', 'Open_Close', 'Volume']
 X_train, y_train = train[features], train['Target']
 X_test, y_test = test[features], test['Target']
 

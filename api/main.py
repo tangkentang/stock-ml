@@ -7,7 +7,10 @@ from pydantic import BaseModel
 # Mendefinisikan struktur input data menggunakan Pydantic
 class StockFeatures(BaseModel):
     SMA_5: float
+    SMA_10: float
     Price_Change: float
+    High_Low: float
+    Open_Close: float
     Volume: float
 
 # Inisialisasi aplikasi FastAPI
